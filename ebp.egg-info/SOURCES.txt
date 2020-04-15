@@ -1,0 +1,8 @@
+README.md
+setup.py
+EasyBuildProject/__init__.py
+EasyBuildProject/ebp.py
+ebp.egg-info/PKG-INFO
+ebp.egg-info/SOURCES.txt
+ebp.egg-info/dependency_links.txt
+ebp.egg-info/top_level.txt
