@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
   name="ebp",
-  version="1.0.0",
+  version="1.0.2",
   author="Yuhao Cheng",
   author_email="chengyuhao_work@outlook.com",
   description="a small tool to build the project",
@@ -18,4 +18,10 @@ setuptools.setup(
   "License :: OSI Approved :: MIT License",
   "Operating System :: OS Independent",
   ],
+  entry_points={
+    'console_scripts':[
+      'ebp = EasyBuildProject.ebp:main'
+    ]
+  },
+  # scripts=['ebp.py'],
 )

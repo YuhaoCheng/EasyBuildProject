@@ -14,6 +14,7 @@ Options:
 
 import os
 import json
+import pprint
 from collections import OrderedDict
 from docopt import docopt
 
@@ -94,14 +95,15 @@ def use_custom(json_path):
 def main():
     # print('000')
     # print(__doc__)
-    arguments = docopt(__doc__, version="1.0.0")
+    arguments = docopt(__doc__, version="1.0.2")
     # print('123')
     # print(arguments)
 
     if arguments['use-default']:
         build_folder(DEFAULT['structure'], arguments['<root>'], False)
     if arguments['show-default']:
-        print(DEFAULT)
+        pp = pprint.PrettyPrinter(indent=4)
+        pp.pprint(DEFAULT)
     if arguments['save-default']:
         save_structure(DEFAULT)
     if arguments['use']:
