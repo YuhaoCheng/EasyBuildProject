@@ -50,8 +50,13 @@ DEFAULT = {
                     }
                 }
             }
+        },
+        "script":{
+            "package": False,
+            "contain":{}
         }
-    }
+    },
+    "main_file":True
 }
 
 
@@ -81,7 +86,8 @@ def read_structure(json_path):
     with open(json_path, 'r') as f:
         structure = json.load(f)
     structure = OrderedDict(structure)
-    return structure['structure'], structure['root']
+    main_flag = structure['main_file']
+    return structure['structure'], structure['root'], main_flag
 
 def save_structure(structure):
     with open('default_structure.json', 'w') as f:
@@ -89,13 +95,16 @@ def save_structure(structure):
     print('Save in default_structure.json')
 
 def use_custom(json_path):
-    structure, root_path = read_structure(json_path)
+    structure, root_path, main_flag = read_structure(json_path)
+    if main_flag:
+        with open(os.path.join(root_path, 'main.py'), 'w') as f:
+            pass
     build_folder(structure, root_path, False)
 
 def main():
     # print('000')
     # print(__doc__)
-    arguments = docopt(__doc__, version="1.0.2")
+    arguments = docopt(__doc__, version="1.0.3")
     # print('123')
     # print(arguments)
 

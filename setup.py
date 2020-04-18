@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
   name="ebp",
-  version="1.0.2",
+  version="1.0.3",
   author="Yuhao Cheng",
   author_email="chengyuhao_work@outlook.com",
   description="a small tool to build the project",
