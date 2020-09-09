@@ -3,7 +3,7 @@ A very easy tool to make the Python project
 
 ## Install
 
-`pip install ebp==1.0.0`
+`pip install ebp`
 
 ## Usage
 
