@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
   name="ebp",
-  version="1.0.3",
+  version="1.0.4",
   author="Yuhao Cheng",
   author_email="chengyuhao_work@outlook.com",
   description="a small tool to build the project",
@@ -17,6 +17,9 @@ setuptools.setup(
   "Programming Language :: Python :: 3",
   "License :: OSI Approved :: MIT License",
   "Operating System :: OS Independent",
+  ],
+  install_requires=[
+    'docopt',
   ],
   entry_points={
     'console_scripts':[

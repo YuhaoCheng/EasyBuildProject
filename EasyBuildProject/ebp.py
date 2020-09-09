@@ -21,6 +21,11 @@ from docopt import docopt
 DEFAULT = {
     "root": "/home/user/",
     "tag": "default",
+    "basic_files":{
+        "utils":'utils',
+        "networks_abstract":'networks/abstract',
+        "network_modelAPI":'model_api.py'
+    },
     "structure": {
         "lib":{
             "package":True,
@@ -44,7 +49,7 @@ DEFAULT = {
                             "package":True,
                             "contain":{}
                         },
-                        "buid":{
+                        "build":{
                             "package":True,
                             "contain":{}
                         },
@@ -104,7 +109,6 @@ DEFAULT = {
         },
         "data":{
             "package": False,
-            "contain": {}
         },
         "experiments":{
             "package": False,
@@ -123,9 +127,11 @@ DEFAULT = {
                 }
             }
         },
+        "utils":{
+            "package":True,
+        },
         "script":{
             "package": False,
-            "contain":{}
         }
     },
     "main_file":True

@@ -25,9 +25,81 @@ DEFAULT = {
         "lib":{
             "package":True,
             "contain":{
-                "core":{},
-                "config":{},
-                "datatools":{}
+                "core":{
+                    "package":True,
+                    "contain":{}
+                },
+                "config":{
+                    "package":True,
+                    "contain":{}
+                },
+                "datatools":{
+                    "package":True,
+                    "contain":{
+                        "abstract":{
+                            "package":True,
+                            "contain":{}
+                        },
+                        "augment":{
+                            "package":True,
+                            "contain":{}
+                        },
+                        "buid":{
+                            "package":True,
+                            "contain":{}
+                        },
+                        "dataclass":{
+                            "package":True,
+                            "contain":{}
+                        },
+                        "evaluate":{
+                            "package":True,
+                            "contain":{}
+                        },
+                        "sampler":{
+                            "package":True,
+                            "contain":{}
+                        }
+                    }
+                },
+                "networks":{
+                    "package":True,
+                    "contain":{
+                        "abstract":{
+                            "package":True,
+                            "contain":{}
+                        },
+                        "auxiliary":{
+                            "package":True,
+                            "contain":{}
+                        },
+                        "build":{
+                            "package":True,
+                            "contain":{}
+                        },
+                        "parts":{
+                            "package":True,
+                            "contain":{}
+                        }
+                    }
+                },
+                "loss":{
+                    "package":True,
+                    "contain":{
+                        "abstract":{
+                            "package":True,
+                            "contain":{}
+                        },
+                        "build":{
+                            "package":True,
+                            "contain":{}
+                        },
+                        "functions":{
+                            "package":True,
+                            "contain":{}
+                        }
+                    }
+                }
                 }
         },
         "data":{
@@ -102,11 +174,7 @@ def use_custom(json_path):
     build_folder(structure, root_path, False)
 
 def main():
-    # print('000')
-    # print(__doc__)
     arguments = docopt(__doc__, version="1.0.3")
-    # print('123')
-    # print(arguments)
 
     if arguments['use-default']:
         build_folder(DEFAULT['structure'], arguments['<root>'], False)
